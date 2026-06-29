@@ -64,7 +64,7 @@ export default function BringYourSource({ t }: Props) {
         {/* CTA row */}
         <div className="text-center flex flex-col items-center gap-4">
           <a
-            href="https://github.com/GeckoVision/surfcall/issues/new"
+            href="https://github.com/GeckoVision/gecko-surf/issues/new"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 font-bold px-6 py-3.5 rounded-full text-[16px] text-white transition-transform hover:-translate-y-px focus-visible:outline-2"

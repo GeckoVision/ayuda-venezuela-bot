@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Ayuda Venezuela — Información de emergencia en Telegram",
   description:
-    "Pregunta en español y obtén información clara sobre refugios, agua potable, salud y ayuda humanitaria. Gratis, sin app, sin registro. Un bot de Telegram construido sobre surfcall.",
+    "Pregunta en español y obtén información clara sobre refugios, agua potable, salud y ayuda humanitaria. Gratis, sin app, sin registro. Un bot de Telegram construido sobre Gecko.",
   openGraph: {
     type: "website",
     title: "Ayuda Venezuela — Información de emergencia en Telegram",

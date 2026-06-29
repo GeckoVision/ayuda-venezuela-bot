@@ -25,7 +25,7 @@ export default function PoweredBy({ t }: Props) {
           </div>
 
           <a
-            href="https://github.com/GeckoVision/surfcall"
+            href="https://github.com/GeckoVision/gecko-surf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-yellow font-bold hover:underline text-[15px]"

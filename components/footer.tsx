@@ -5,7 +5,7 @@ interface Props {
 export default function Footer({ t }: Props) {
   const links = [
     { label: "Telegram", href: "https://t.me/DEV_VEZbot" },
-    { label: "GitHub", href: "https://github.com/GeckoVision/surfcall" },
+    { label: "GitHub", href: "https://github.com/GeckoVision/gecko-surf" },
     { label: "Build4Venezuela", href: "https://build4venezuela.com" },
     { label: t.footer_contact, href: "https://x.com/ernanibritto" },
   ];
