@@ -1,0 +1,24 @@
+# Keep the build context to the Python bot only (the landing builds on Vercel).
+.git
+.github
+node_modules
+.next
+out
+app
+components
+lib
+public
+assets
+tests
+*.config.ts
+*.config.mjs
+next-env.d.ts
+tsconfig.json
+package.json
+pnpm-lock.yaml
+eslint.config.mjs
+.env
+.env.*
+.venv
+__pycache__
+*.pyc

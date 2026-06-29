@@ -144,8 +144,8 @@ def chunk_message(text: str, limit: int = TELEGRAM_LIMIT) -> list[str]:
 
 
 def run(config=None) -> None:  # pragma: no cover - founder-run live smoke
-    """Start the long-polling Telegram bot. Requires the `sosbot` extra
-    (`uv sync --extra sosbot`) and TELEGRAM_BOT_TOKEN + ANTHROPIC_API_KEY in env."""
+    """Start the long-polling Telegram bot. Requires deps installed (`uv sync`)
+    and TELEGRAM_BOT_TOKEN + a provider key in env (see `.env.example`)."""
     import asyncio
     import time
 
@@ -160,7 +160,7 @@ def run(config=None) -> None:  # pragma: no cover - founder-run live smoke
             filters,
         )
     except ImportError as exc:
-        raise SystemExit("Instala el extra del bot: uv sync --extra sosbot") from exc
+        raise SystemExit("Instala las dependencias del bot: uv sync") from exc
 
     from . import agent
     from .config import SPEC_PATH, SYSTEM_ES, BotConfig

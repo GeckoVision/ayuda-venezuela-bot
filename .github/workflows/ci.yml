@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  bot:
+    name: bot · python (lint · types · tests)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.11"
+      # Pulls gecko-surf (and the rest) from PyPI — the bot must build from
+      # published packages, not a git checkout. If this step fails, the install
+      # story is broken; that's the signal we want.
+      - name: Lint, type-check, test (offline, no secrets)
+        run: |
+          uv run ruff format --check bot tests
+          uv run ruff check bot tests
+          uv run mypy bot
+          uv run pytest
+
+  landing:
+    name: landing · next.js (lint · build)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm build
