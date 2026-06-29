@@ -1,0 +1,23 @@
+[project]
+name = "sos-venezuela"
+version = "0.1.0"
+description = "Spanish-first Telegram bot giving Venezuelans clear emergency info — an AI agent over the SOS Venezuela 2026 API, powered by surfcall."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    # The comprehension engine. Public, MIT. This is what makes the bot
+    # first-call-correct against the SOS Venezuela API.
+    "surfcall @ git+https://github.com/GeckoVision/surfcall",
+    # LLM providers (the agent loop) + Telegram transport.
+    "anthropic>=0.40",
+    "openai>=1.40",
+    "python-telegram-bot>=21",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["bot"]

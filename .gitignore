@@ -1,0 +1,25 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+uv.lock
+
+# Node / tooling (the page is static, but deploy CLIs leave these)
+node_modules/
+.vercel/
+.netlify/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
