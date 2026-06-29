@@ -1,5 +1,5 @@
 [project]
-name = "sos-venezuela"
+name = "ayuda-venezuela-bot"
 version = "0.1.0"
 description = "Spanish-first Telegram bot giving Venezuelans clear emergency info — an AI agent over the SOS Venezuela 2026 API, powered by surfcall."
 readme = "README.md"
