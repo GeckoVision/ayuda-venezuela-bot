@@ -25,15 +25,18 @@ def test_executes_tool_then_answers(tools: SurfcallTools) -> None:
     reply = agent.respond("¿cuántos desaparecidos?", llm=llm, tools=tools, **KW)
 
     assert reply == "Hay 43.948 personas reportadas."
-    # second call carried the assistant tool_use + the tool_result back to the model
+    # second call carried the assistant tool_use + the REAL recorded tool_result back
     second = llm.calls[1]["messages"]
-    assert any(
-        isinstance(m["content"], list)
-        and any(
-            isinstance(b, dict) and b.get("type") == "tool_result" for b in m["content"]
-        )
+    tool_results = [
+        b
         for m in second
-    )
+        if isinstance(m["content"], list)
+        for b in m["content"]
+        if isinstance(b, dict) and b.get("type") == "tool_result"
+    ]
+    assert tool_results, "the tool_result was never fed back to the model"
+    # proves the recorded call actually ran (not the degrade/error payload)
+    assert '"status": 200' in tool_results[0]["content"]
 
 
 def test_empty_final_text_degrades_to_fallback(tools: SurfcallTools) -> None:

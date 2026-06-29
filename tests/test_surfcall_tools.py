@@ -40,7 +40,8 @@ def test_custom_allowlist_hides_other_reads() -> None:
 def test_call_returns_valid_capped_json(tools: SurfcallTools) -> None:
     out = tools.call("getPersonStats", {})
     parsed = json.loads(out)  # must be valid JSON
-    assert "data" in parsed
+    assert parsed["status"] == 200  # status is mapped through, not silently dropped
+    assert {"missing", "found", "total"} <= set(parsed["data"])  # real recorded shape
     assert len(out) <= tools.max_chars
 
 

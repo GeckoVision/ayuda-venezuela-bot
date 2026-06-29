@@ -1,6 +1,6 @@
 # `bot/` — the SOS Venezuela Telegram agent
 
-A small AI-agent loop over [surfcall](https://github.com/GeckoVision/surfcall).
+A small AI-agent loop over [gecko-surf](https://pypi.org/project/gecko-surf/).
 Spanish-first; treats API results as data, not instructions; never logs secrets.
 
 | File | Purpose |
@@ -16,7 +16,6 @@ Spanish-first; treats API results as data, not instructions; never logs secrets.
 
 See the repo root [README](../README.md) for run instructions and env vars.
 
-> The canonical, hackathon-proven run path is via the surfcall repo
-> (`uv run --extra sosbot python -m examples.sos_vzla_bot.bot`). The standalone
-> `python -m bot` path here depends on the public `surfcall` package (see
-> `pyproject.toml`).
+> Run it with `python -m bot` (`uv run python -m bot`). The bot installs its engine,
+> `gecko-surf`, from PyPI — see `pyproject.toml` and the root [README](../README.md) —
+> so it doesn't depend on any git checkout being available.

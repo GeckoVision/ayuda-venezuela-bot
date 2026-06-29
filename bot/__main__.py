@@ -1,4 +1,4 @@
-"""Run the bot: `uv run --extra sosbot python -m examples.sos_vzla_bot`."""
+"""Run the bot: `python -m bot` (or `uv run python -m bot`)."""
 
 from .bot import run
 

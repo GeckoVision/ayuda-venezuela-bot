@@ -113,3 +113,12 @@ def test_chunk_long_message_respects_limit_and_preserves_words() -> None:
     assert all(len(c) <= 200 for c in chunks)
     # no words lost or split across the join
     assert " ".join(chunks).split() == text.split()
+
+
+def test_chunk_hard_splits_unbreakable_token() -> None:
+    # a single token longer than the limit has no space/newline to cut on, so it
+    # exercises the `cut <= 0 -> cut = limit` last-resort branch in chunk_message
+    blob = "a" * 500
+    chunks = chunk_message(blob, limit=200)
+    assert all(len(c) <= 200 for c in chunks)
+    assert "".join(chunks) == blob  # nothing dropped, no empty chunks
