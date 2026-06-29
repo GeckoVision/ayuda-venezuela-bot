@@ -9,8 +9,9 @@
 Construido para el hackathon **[Build4Venezuela 2026](https://build4venezuela.com)**,
 en respuesta al doble terremoto del 24 de junio de 2026.
 
+[![CI](https://github.com/GeckoVision/ayuda-venezuela-bot/actions/workflows/ci.yml/badge.svg)](https://github.com/GeckoVision/ayuda-venezuela-bot/actions/workflows/ci.yml)
 [![Telegram](https://img.shields.io/badge/Telegram-@DEV__VEZbot-229ED9.svg)](https://t.me/DEV_VEZbot)
-[![Powered by surfcall](https://img.shields.io/badge/powered%20by-surfcall-2563eb.svg)](https://github.com/GeckoVision/surfcall)
+[![Powered by gecko-surf](https://img.shields.io/badge/powered%20by-gecko--surf-2563eb.svg)](https://pypi.org/project/gecko-surf/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 <p align="center">
@@ -62,6 +63,7 @@ respuestas — solo aprende a llamar la API correctamente.
 | `app/` · `components/` · `lib/` | La **landing page** (Next.js 16 + React 19 + Tailwind 4). Los textos ES/EN viven en `lib/i18n.ts`. |
 | `bot/` | El bot de Telegram: agente, herramientas sobre surfcall, proveedores LLM. |
 | `bot/spec/` | El **OpenAPI** de SOS Venezuela 2026 que escribimos — también un aporte al proyecto, para que cualquiera pueda construir encima. |
+| `tests/` · `.github/` · `Dockerfile` | Pruebas (pytest, offline), CI (GitHub Actions) y la imagen del bot. |
 
 ---
 
@@ -90,28 +92,52 @@ viven en `lib/i18n.ts`.
 Necesitas un token de Telegram (de [@BotFather](https://t.me/BotFather)) y una clave de
 LLM. Copia `.env.example` → `.env` y completa los valores.
 
-**Camino probado (vía surfcall — el motor):**
-
 ```bash
-git clone https://github.com/GeckoVision/surfcall && cd surfcall
-uv sync --extra sosbot
-export TELEGRAM_BOT_TOKEN=...  SOSBOT_PROVIDER=anthropic  ANTHROPIC_API_KEY=...
-uv run --extra sosbot python -m examples.sos_vzla_bot.bot
-```
-
-> Para el jurado/uso real, usa `SOSBOT_PROVIDER=anthropic` con `claude-haiku-4-5`
-> (confiable, centavos por chat). El modo gratuito de OpenRouter puede tener límites.
-
-**Standalone (desde este repo — depende de surfcall):**
-
-```bash
-uv sync                              # instala surfcall + telegram + el cliente LLM
+uv sync                              # instala gecko-surf (desde PyPI) + telegram + cliente LLM
 export TELEGRAM_BOT_TOKEN=...  SOSBOT_PROVIDER=anthropic  ANTHROPIC_API_KEY=...
 uv run python -m bot
 ```
 
+> El motor de comprensión, **`gecko-surf`, está publicado en
+> [PyPI](https://pypi.org/project/gecko-surf/)** (`pip install gecko-surf`) — el bot lo
+> instala como cualquier otra dependencia, así que **no depende de ningún repositorio
+> git para funcionar.** (`pyproject.toml` lo fija con `gecko-surf>=0.1.0`.)
+
+> Para el jurado/uso real, usa `SOSBOT_PROVIDER=anthropic` con `claude-haiku-4-5`
+> (confiable, centavos por chat). El modo gratuito de OpenRouter puede tener límites.
+
 `SOSBOT_MODE=recorded` corre todo offline a $0 (respuestas sintetizadas desde el
 esquema) — útil para probar sin tocar la red.
+
+### Con Docker
+
+```bash
+docker build -t ayuda-venezuela-bot .
+docker run --rm --env-file .env ayuda-venezuela-bot
+```
+
+Imagen mínima: solo el worker del bot (la landing va en Vercel). Instala `gecko-surf`
+desde PyPI, corre sin root y no expone puertos (usa long-polling de Telegram).
+
+---
+
+## Tests y CI
+
+```bash
+uv run pytest          # offline, $0 — sin tocar la red ni gastar tokens
+```
+
+Toda la lógica del bot es testeable sin secretos: el modo `recorded` de gecko-surf
+sintetiza las respuestas desde el esquema y el LLM se inyecta como un doble de prueba.
+Las pruebas cubren el seam de gecko-surf (allow-list de 5 lecturas públicas, nunca
+revienta, JSON siempre válido), el loop del agente, los handlers de Telegram y la
+traducción de proveedores.
+
+**CI** ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)) corre en cada push y PR:
+
+- **bot** — `ruff` (formato + lint), `mypy` y `pytest`, instalando `gecko-surf` desde
+  PyPI (así CI falla si la historia de instalación se rompe).
+- **landing** — `pnpm lint` + `pnpm build` (Next.js).
 
 ---
 
