@@ -26,11 +26,11 @@ const ES = {
 
   surf_title: "¿Cómo funciona por dentro?",
   surf_p1:
-    "Este bot es un agente de IA construido sobre surfcall (de Gecko): la capa que hace que cualquier API sea usable por agentes, sin escribir código de integración.",
+    "Este bot es un agente de IA construido sobre Gecko: la capa que hace que cualquier API sea usable por agentes, sin escribir código de integración.",
   surf_p2:
-    "surfcall lee la API de SOS Venezuela 2026, genera las herramientas correctas y hace la llamada bien a la primera. Lo mismo funciona para cualquier otra API.",
+    "Gecko lee la API de SOS Venezuela 2026, genera las herramientas correctas y hace la llamada bien a la primera. Lo mismo funciona para cualquier otra API.",
   surf_note:
-    "surfcall nunca guarda tus datos ni el contenido de las respuestas — solo aprende a usar la API.",
+    "Gecko nunca guarda tus datos ni el contenido de las respuestas — solo aprende a usar la API.",
   surf_cta: "Ver el código (open source)",
 
   api_title: "La API que alimenta el bot",
@@ -53,7 +53,7 @@ const ES = {
     "¿Tienes una API o una fuente de datos humanitarios? La volvemos usable por agentes de IA. Aporta tu fuente y el bot puede responder con ella.",
   byos_path1_title: "Tienes un OpenAPI",
   byos_path1_desc:
-    "Si tu fuente tiene un openapi.json, integrarlo es prácticamente un click. surfcall lee el esquema y genera las herramientas sola.",
+    "Si tu fuente tiene un openapi.json, integrarlo es prácticamente un click. Gecko lee el esquema y genera las herramientas sola.",
   byos_path2_title: "No tienes OpenAPI",
   byos_path2_desc:
     "No hay problema. Descríbenos la API o la fuente y la integramos a mano.",
@@ -94,11 +94,11 @@ const EN: typeof ES = {
 
   surf_title: "What's under the hood?",
   surf_p1:
-    "This bot is an AI agent built on surfcall (by Gecko): the layer that makes any API usable by agents — without writing integration code.",
+    "This bot is an AI agent built on Gecko: the layer that makes any API usable by agents — without writing integration code.",
   surf_p2:
-    "surfcall reads the SOS Venezuela 2026 API, generates the right tools, and makes the correct call on the first try. The same works for any other API.",
+    "Gecko reads the SOS Venezuela 2026 API, generates the right tools, and makes the correct call on the first try. The same works for any other API.",
   surf_note:
-    "surfcall never stores your data or the API's responses — it only learns how to call the API.",
+    "Gecko never stores your data or the API's responses — it only learns how to call the API.",
   surf_cta: "See the code (open source)",
 
   api_title: "The API powering the bot",
@@ -121,7 +121,7 @@ const EN: typeof ES = {
     "Have a humanitarian API or data source? We make it usable by AI agents. Contribute your source and the bot can answer with it.",
   byos_path1_title: "You have an OpenAPI",
   byos_path1_desc:
-    "If your source has an openapi.json, integrating it is basically one click. surfcall reads the schema and generates the tools automatically.",
+    "If your source has an openapi.json, integrating it is basically one click. Gecko reads the schema and generates the tools automatically.",
   byos_path2_title: "No OpenAPI",
   byos_path2_desc:
     "No problem. Describe the API or data source and we'll integrate it by hand.",
