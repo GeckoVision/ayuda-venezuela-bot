@@ -55,7 +55,7 @@ respuestas — solo aprende a llamar la API correctamente.
 
 | Carpeta | Qué hay |
 |---|---|
-| `site/` | La landing page (un solo `index.html`, sin build step, ES/EN). |
+| `app/` · `components/` · `lib/` | La **landing page** (Next.js 16 + React 19 + Tailwind 4). Los textos ES/EN viven en `lib/i18n.ts`. |
 | `bot/` | El bot de Telegram: agente, herramientas sobre surfcall, proveedores LLM. |
 | `bot/spec/` | El **OpenAPI** de SOS Venezuela 2026 que escribimos — también un aporte al proyecto, para que cualquiera pueda construir encima. |
 
@@ -63,18 +63,21 @@ respuestas — solo aprende a llamar la API correctamente.
 
 ## Levantar la landing page
 
-Sin dependencias. Para verla local:
+App **Next.js** (React 19 + Tailwind 4). En local:
 
 ```bash
-python3 -m http.server 8080 --directory site
-# abrí http://localhost:8080
+pnpm install
+pnpm dev          # http://localhost:3000
 ```
 
-Para publicarla (Vercel o Netlify):
+Para producción:
 
 ```bash
-npx vercel --cwd site --prod        # o:  npx netlify deploy --dir=site --prod
+pnpm build && pnpm start
 ```
+
+Está conectada a **Vercel**: cada push a `main` la despliega sola. Los textos ES/EN
+viven en `lib/i18n.ts`.
 
 ---
 
