@@ -64,7 +64,7 @@ const ES = {
     "Construido para el hackathon Build4Venezuela 2026 · Código abierto (MIT) · También aportamos mejoras a la API de SOS Venezuela.",
   footer_contact: "Contacto",
   footer_disc:
-    "En una emergencia inmediata, contacta siempre a los servicios locales.",
+    "En una emergencia inmediata, contacta siempre a los servicios locales (171).",
   footer_made: "Hecho con ♥ para Venezuela · por Gecko",
 };
 
@@ -98,7 +98,7 @@ const EN: typeof ES = {
   surf_p2:
     "surfcall reads the SOS Venezuela 2026 API, generates the right tools, and makes the correct call on the first try. The same works for any other API.",
   surf_note:
-    "surfcall never stores your data or the API responses — it only learns how to call the API.",
+    "surfcall never stores your data or the API's responses — it only learns how to call the API.",
   surf_cta: "See the code (open source)",
 
   api_title: "The API powering the bot",
@@ -124,14 +124,14 @@ const EN: typeof ES = {
     "If your source has an openapi.json, integrating it is basically one click. surfcall reads the schema and generates the tools automatically.",
   byos_path2_title: "No OpenAPI",
   byos_path2_desc:
-    "No problem. Describe the API or data source to us and we will integrate it by hand.",
+    "No problem. Describe the API or data source and we'll integrate it by hand.",
   byos_cta: "Bring your source →",
   byos_contact: "Prefer to talk? Reach me on",
 
   builders:
     "Built for the Build4Venezuela 2026 hackathon · Open source (MIT) · We also contributed improvements back to the SOS Venezuela API.",
   footer_contact: "Contact",
-  footer_disc: "In an immediate emergency, always contact your local services.",
+  footer_disc: "In an immediate emergency, always contact your local services (171).",
   footer_made: "Made with ♥ for Venezuela · by Gecko",
 };
 
