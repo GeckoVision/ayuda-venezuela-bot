@@ -66,7 +66,7 @@ const ES = {
   footer_disc:
     "En una emergencia inmediata, contactá siempre a los servicios locales.",
   footer_made: "Hecho con ♥ para Venezuela · por Gecko",
-} as const;
+};
 
 const EN: typeof ES = {
   eyebrow: "SOS Venezuela 2026",
