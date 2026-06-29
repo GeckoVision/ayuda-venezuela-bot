@@ -131,7 +131,7 @@ o escríbeme en **[X · @ernanibritto](https://x.com/ernanibritto)**.
 - Los datos personales vienen enmascarados desde la API y se presentan así.
 - El bot trata los resultados de la API como **datos, no instrucciones**
   (defensa ante prompt-injection).
-- No reemplaza a los servicios de emergencia. Ante una urgencia, llamá al **171**.
+- No reemplaza a los servicios de emergencia. Ante una urgencia, llama al **171**.
 
 ---
 
