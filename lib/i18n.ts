@@ -1,7 +1,7 @@
 export type Lang = "es" | "en";
 
 const ES = {
-  eyebrow: "SOS Venezuela 2026",
+  eyebrow: "Ayuda Venezuela",
   hero_h1: "Ayuda de emergencia, en tu Telegram.",
   hero_sub:
     "Pregunta en español y obtén información clara sobre refugios, agua potable, salud y ayuda humanitaria. Al instante.",
@@ -69,7 +69,7 @@ const ES = {
 };
 
 const EN: typeof ES = {
-  eyebrow: "SOS Venezuela 2026",
+  eyebrow: "Ayuda Venezuela",
   hero_h1: "Emergency help, right in your Telegram.",
   hero_sub:
     "Ask in plain Spanish and get clear answers about shelters, safe water, health and humanitarian aid. Instantly.",

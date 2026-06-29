@@ -14,14 +14,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SOS Venezuela — Ayuda de emergencia en Telegram",
+  title: "Ayuda Venezuela — Información de emergencia en Telegram",
   description:
-    "Preguntá en español y obtené información clara sobre refugios, agua potable, salud y ayuda humanitaria. Gratis, sin app, sin registro. Un bot de Telegram construido sobre surfcall.",
+    "Pregunta en español y obtén información clara sobre refugios, agua potable, salud y ayuda humanitaria. Gratis, sin app, sin registro. Un bot de Telegram construido sobre surfcall.",
   openGraph: {
     type: "website",
-    title: "SOS Venezuela — Ayuda de emergencia en Telegram",
+    title: "Ayuda Venezuela — Información de emergencia en Telegram",
     description:
-      "Preguntá en español. Refugios, agua, salud y ayuda — respuestas claras, al instante. Gratis, sin app, sin registro.",
+      "Pregunta en español. Refugios, agua, salud y ayuda — respuestas claras, al instante. Gratis, sin app, sin registro.",
   },
 };
 

@@ -25,7 +25,7 @@ export default function Header({ lang, onLangChange }: HeaderProps) {
             aria-hidden="true"
           />
           <span className="text-white font-bold tracking-tight text-[15px]">
-            SOS Venezuela
+            Ayuda Venezuela
           </span>
         </div>
 
