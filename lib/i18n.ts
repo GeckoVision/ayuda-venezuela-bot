@@ -4,12 +4,12 @@ const ES = {
   eyebrow: "SOS Venezuela 2026",
   hero_h1: "Ayuda de emergencia, en tu Telegram.",
   hero_sub:
-    "Preguntá en español y obtené información clara sobre refugios, agua potable, salud y ayuda humanitaria. Al instante.",
+    "Pregunta en español y obtén información clara sobre refugios, agua potable, salud y ayuda humanitaria. Al instante.",
   cta_open: "Abrir en Telegram",
   trust: "Gratis · Sin descargar nada · Sin registro",
 
-  ask_title: "¿Qué podés preguntar?",
-  ask_lead: "Escribí como le hablarías a una persona. Por ejemplo:",
+  ask_title: "¿Qué puedes preguntar?",
+  ask_lead: "Escribe como le hablarías a una persona. Por ejemplo:",
   ask_1: "¿Dónde hay un refugio cerca de mí?",
   ask_2: "¿El agua de mi zona es segura para tomar?",
   ask_3: "¿Dónde consigo atención médica?",
@@ -17,11 +17,11 @@ const ES = {
 
   how_title: "Cómo funciona",
   how_lead: "Tres pasos. Sin complicaciones.",
-  how_1_h: "Escribí tu pregunta",
+  how_1_h: "Escribe tu pregunta",
   how_1_p: "En español, como en una conversación normal.",
   how_2_h: "El bot entiende y consulta",
   how_2_p: "Usa los datos de SOS Venezuela 2026 en tiempo real.",
-  how_3_h: "Recibís una respuesta clara",
+  how_3_h: "Recibes una respuesta clara",
   how_3_p: "Sin tecnicismos, lista para actuar.",
 
   surf_title: "¿Cómo funciona por dentro?",
@@ -50,21 +50,21 @@ const ES = {
   byos_badge: "Para desarrolladores",
   byos_title: "Esta es solo la primera fuente",
   byos_p:
-    "¿Tenés una API o una fuente de datos humanitarios? La volvemos usable por agentes de IA. Aportá tu fuente y el bot puede responder con ella.",
-  byos_path1_title: "Tenés un OpenAPI",
+    "¿Tienes una API o una fuente de datos humanitarios? La volvemos usable por agentes de IA. Aporta tu fuente y el bot puede responder con ella.",
+  byos_path1_title: "Tienes un OpenAPI",
   byos_path1_desc:
     "Si tu fuente tiene un openapi.json, integrarlo es prácticamente un click. surfcall lee el esquema y genera las herramientas sola.",
-  byos_path2_title: "No tenés OpenAPI",
+  byos_path2_title: "No tienes OpenAPI",
   byos_path2_desc:
-    "No hay problema. Describinos la API o la fuente y la integramos a mano.",
-  byos_cta: "Traé tu fuente →",
-  byos_contact: "¿Preferís hablar? Escribime en",
+    "No hay problema. Descríbenos la API o la fuente y la integramos a mano.",
+  byos_cta: "Trae tu fuente →",
+  byos_contact: "¿Prefieres hablar? Escríbeme en",
 
   builders:
     "Construido para el hackathon Build4Venezuela 2026 · Código abierto (MIT) · También aportamos mejoras a la API de SOS Venezuela.",
   footer_contact: "Contacto",
   footer_disc:
-    "En una emergencia inmediata, contactá siempre a los servicios locales.",
+    "En una emergencia inmediata, contacta siempre a los servicios locales.",
   footer_made: "Hecho con ♥ para Venezuela · por Gecko",
 };
 
